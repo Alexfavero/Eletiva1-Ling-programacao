@@ -4,22 +4,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>exercicio 2</title>
+    <title>exercicio 8</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1>Exercicio 2</h1>
-    <form method="post" action="exerc2resposta.php">
+    <h1>Exercicio 8</h1>
+    <form method="post" action="exerc8resposta.php">
 
         <div class="mb-3">
-            <label for="valor1" class="form-label">Informe o primeiro valor</label>
-            <input type="number" id="valor1" name="valor1" class="form-control" required="">
+            <label for="largura" class="form-label">Informe a largura do retangulo</label>
+            <input type="number" id="largura" name="largura" class="form-control" required="">
         </div>
 
         <div class="mb-3">
-            <label for="valor2" class="form-label">Informe o segundo valor</label>
-            <input type="number" id="valor2" name="valor2" class="form-control" required="">
+            <label for="altura" class="form-label">Informe a altura do retangulo</label>
+            <input type="number" id="altura" name="altura" class="form-control" required="">
         </div>
 
         <button type="submit" class="btn btn-primary">Enviar</button>
