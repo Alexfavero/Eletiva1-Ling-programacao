@@ -52,6 +52,9 @@
                 case 12:
                     echo "DEZEMBRO";
                     break;
+                default:
+                    echo "Informe um valor válido";
+                    break;
             }
         } catch (Exception $e) {
             echo $e->getMessage();
