@@ -8,7 +8,7 @@ declare(strict_types=1); ?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Exercicio 1</title>
+    <title>Exercicio 2</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
@@ -16,33 +16,27 @@ declare(strict_types=1); ?>
 <body>
 
 
-    <h1>Exercicio 1 Resposta</h1>
+    <h1>Exercicio 2 Resposta</h1>
 
     <?php
-
-
-
-
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         try {
             $a = array();
             $nome = $_POST['nome'];
-            $tel = $_POST['tel'];
+            $nota1 =  $_POST['nota1'];
+            $nota2 =  $_POST['nota2'];
+            $nota3 =  $_POST['nota3'];
+
             for ($i = 0; $i < count($nome); $i++) {
-                if (array_key_exists($nome[$i], $a)) {
-                    echo "<p>Erro: O nome " . strtoupper($nome[$i]) . " já foi adicionado.<p>";
-                } elseif (in_array($tel[$i], $a)) {
-                    echo "<p>Erro: O telefone " . $tel[$i] . " já foi adicionado.<p>";
-                } else {
-                    $a[$nome[$i]] = $tel[$i];
-                }
+                $media = ((float)$nota1[$i] + (float) $nota2[$i] + (float)$nota3[$i]) / 3;
+                $a[$nome[$i]] = $media;
             }
 
-            ksort($a);
+            arsort($a);
 
-            foreach ($a as $nome => $tel) {
-                echo "<p>Nome: " . strtoupper($nome) . " Tel: $tel<p>";
+            foreach ($a as $nome => $media) {
+                echo "<p>Nome: " . strtoupper($nome) . " Média: " . number_format($media, 2, ',', '.' . "</p>   ");
             }
         } catch (Exception $e) {
             echo "Erro: " . $e->getMessage();
